@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 
 class Item extends Component {
     render () {
+        let disabled = false;
+        (this.props.article.stock===0)?disabled=true:disabled=false;
         return (
             <li className="listItem" >
                 <div className="itemHeader">
@@ -15,7 +17,7 @@ class Item extends Component {
                     <p className="itemPrix">
                     {this.props.article.prix}€
                     </p>
-                    <button onClick={this.props.buyItem.bind(this,this.props.article.nom,this.props.article.prix)} className="itemSubmit">
+                    <button disabled={disabled} onClick={this.props.buyItem.bind(this,this.props.index)} className="itemSubmit">
                         Ajouter au panier
                     </button>
                     

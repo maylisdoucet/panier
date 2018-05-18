@@ -22,6 +22,50 @@
   font-size: large;
 }
 
+ul {
+  list-style-type: none;
+}
+
+.listGenerique {
+  width: 50%;
+  height: 100%;
+  margin: auto;
+}
+
+.listItem {
+  border: 1px solid grey;
+  box-shadow: 2px 2px 2px #222;
+  margin: 1rem;
+}
+
+.itemHeader {
+  background-color:grey;
+  color: white;
+}
+
+.panier {
+  width: 21%;
+  position: absolute;
+  top:2%;
+  right: 2%;
+  border: 1px solid black;
+  box-shadow: 2px 2px 2px #222;
+}
+
+.panier ul {
+  padding:0;
+}
+
+.panierHeader, .panierFooter {
+  background-color: grey;
+  color: white;
+}
+
+.cartItem {
+  border: 1px solid grey;
+  margin:2px;
+}
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }

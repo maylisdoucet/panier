@@ -1,34 +1,26 @@
 import React, { Component } from 'react';
+import CartItem from './CartItem';
 
-   
 class Panier extends Component {
-
-    constructor(props){
-        super(props);
-        this.state = {
-            nomArticle: "",
-            quantiteArticle: "",
-            prixArticle: "",
-            prixTotal: ""
-        }
-    }
-
-
     render () {
         return (
             <div className="panier" >
-                <p className="panierHeader">
-                    {}
-                </p>
-
-                <div className="panierBody">
-                    <p className="choix">
+                <div className = "panierHeader" >
+                    Votre panier:
+                </div>
+                <ul>
                     {
+                        this.props.cartList.map((item,index)  => {
+                        return <CartItem article={item} index={index} key={index} removeToCart={this.props.removeToCart} />
+                        })
                     }
-                    </p>
-                    <div className="prixtotal">
-                    {}
-                    </div>
+                </ul>
+                <div className = "panierFooter" >
+                    Montant total: {this.props.totalPrice}€
+                        <br/>
+                    <button onClick={this.props.clearCart} >
+                        Vider votre panier
+                    </button>
                 </div>
             </div>
         )

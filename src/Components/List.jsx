@@ -8,7 +8,7 @@ class List extends Component {
             <ul className="listGenerique">
                 {
                     this.props.list.map((item,index)  => {
-                        return <Item article={item} key={index} buyItem={this.props.buyItem} />
+                        return <Item article={item} index={index} key={index} buyItem={this.props.buyItem} />
                     })
                     
                 }
